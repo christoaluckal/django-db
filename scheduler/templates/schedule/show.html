@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        {% if schedule_list %}
+    <ul>
+    {% for question in schedule_list %}
+        <li>Date: {{ question.date }}</li>
+        <li>{{ question.yesterday_time_of_sleep }}</li>
+        <li>{{ question.wakeup_time }}</li>
+        <li>{{ question.exercise }}</li>
+        <li>{{ question.exercise_duration }}</li>
+        <li>{{ question.water_glasses }}</li>
+        <li>{{ question.weight_gain }}</li>
+        <li>{{ question.current_weight }}</li>
+        <li>{{ question.df }}</li>
+        <li>{{ question.df_quality }}</li>
+    {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    </body>
+</html>
