@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'scheduler/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <form action="{% url 'scheduler:catsubmit' %}" method="post">
-            {% csrf_token %}
-            <fieldset>
-                <input type="date" id="date" name="date">
-                <select name="catname" id="catname">
-                    <option value="water_glasses">Water</option>
-                </select>
-            </fieldset>
-            <input type="submit" value="Vote">
-        </form>
+        <div class="container">
+            <div class="row cat-form">
+                <div class="col-12 ">
+                    <form action="{% url 'scheduler:catsubmit' %}"method="post">
+                        {% csrf_token %}
+                        <fieldset>
+                            <div class="date-selector">
+                                {% load static %}
+                                <img src="{% static 'scheduler/images/alarm.svg' %}">
+                                <input type="date" id="date" name="date">
+                            </div>
+                            <div class="category-selector">
+                                <select name="catname" id="catname">
+                                    <option selected>-----------</option>
+                                    <option value="yesterday_time_of_sleep">Time of sleep</option>
+                                    <option value="wakeup_time">Wakeup time</option>
+                                    <option value="exercise">Exercise</option>
+                                    <option value="exercise_duration">Exercise duration</option>
+                                    <option value="water_glasses">Glasses of water</option>
+                                    <option value="weight_gain">Weight gain</option>
+                                    <option value="current_weight">Current Weight</option>
+                                    <option value="df">DF</option>
+                                    <option value="df_quality">DF Quality</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="submit-div">
+                            <input type="submit" value="Check">                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
     </body>
 </html>

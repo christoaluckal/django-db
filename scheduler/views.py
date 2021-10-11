@@ -30,7 +30,7 @@ def catsubmit(request):
     date_check = request.POST['date']
     catname = request.POST['catname']
     schedule_list = Schedule.objects.get(date=date_check)
-    print(model_to_dict(schedule_list))
+    schedule_dict = model_to_dict(schedule_list)
     template = loader.get_template('schedule/showsome.html')
     context = {
         'date':date_check,

@@ -6,3 +6,19 @@
     display: inline-block;
     margin: 0 1%;
 }
+.cat-form {
+    /* border: 1px solid black; */
+    color: aqua;
+    text-align: center;
+}
+
+.date-selector,.category-selector{
+    display: inline-block;
+    margin: 5% 5%;
+}
+
+
+.submit-div{
+    margin: 5% 0;
+}
+  
