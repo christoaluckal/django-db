@@ -8,49 +8,49 @@
     <body>
         {% if schedule_list %}
 
-    {% for question in schedule_list %}
+    {% for vals in schedule_list %}
     <div class="display-list-box">
 
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td class="sch-value" colspan="2">{{question.date}}</td>
+                        <td class="sch-value" colspan="2">{{vals.date}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Time of sleep</td>
-                        <td class="sch-value">{{question.yesterday_time_of_sleep}}</td>
+                        <td class="sch-value">{{vals.yesterday_time_of_sleep}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Wakeup time</td>
-                        <td class="sch-value">{{question.wakeup_time}}</td>
+                        <td class="sch-value">{{vals.wakeup_time}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Exercise?</td>
-                        <td class="sch-value">{{question.exercise}}</td>
+                        <td class="sch-value">{{vals.exercise}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Exercise Duration</td>
-                        <td class="sch-value">{{question.exercise_duration}}</td>
+                        <td class="sch-value">{{vals.exercise_duration}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Water Glasses</td>
-                        <td class="sch-value">{{question.water_glasses}}</td>
+                        <td class="sch-value">{{vals.water_glasses}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Weight Gain</td>
-                        <td class="sch-value">{{question.weight_gain}}</td>
+                        <td class="sch-value">{{vals.weight_gain}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">Current Weight</td>
-                        <td class="sch-value">{{question.current_weight}}</td>
+                        <td class="sch-value">{{vals.current_weight}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">DF</td>
-                        <td class="sch-value">{{question.df}}</td>
+                        <td class="sch-value">{{vals.df}}</td>
                     </tr>
                     <tr>
                         <td class="sch-attribute">DF Quality</td>
-                        <td class="sch-value">{{question.df_quality}}</td>
+                        <td class="sch-value">{{vals.df_quality}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, response
 from django.template import loader
+from django.forms.models import model_to_dict
 # Create your views here.
 from .models import Schedule
 def index(request):
@@ -28,9 +29,8 @@ def category(request):
 def catsubmit(request):
     date_check = request.POST['date']
     catname = request.POST['catname']
-    print(date_check,catname)
     schedule_list = Schedule.objects.get(date=date_check)
-    print(getattr(schedule_list,catname))
+    print(model_to_dict(schedule_list))
     template = loader.get_template('schedule/showsome.html')
     context = {
         'date':date_check,
