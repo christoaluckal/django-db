@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'scheduler/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css">
     </head>
     <body>
         {% if schedule_list %}
-    <ul>
+
     {% for question in schedule_list %}
-        <li>Date: {{ question.date }}</li>
-        <li>{{ question.yesterday_time_of_sleep }}</li>
-        <li>{{ question.wakeup_time }}</li>
-        <li>{{ question.exercise }}</li>
-        <li>{{ question.exercise_duration }}</li>
-        <li>{{ question.water_glasses }}</li>
-        <li>{{ question.weight_gain }}</li>
-        <li>{{ question.current_weight }}</li>
-        <li>{{ question.df }}</li>
-        <li>{{ question.df_quality }}</li>
+    <div class="display-list-box">
+
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td class="sch-value" colspan="2">{{question.date}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Time of sleep</td>
+                        <td class="sch-value">{{question.yesterday_time_of_sleep}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Wakeup time</td>
+                        <td class="sch-value">{{question.wakeup_time}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Exercise?</td>
+                        <td class="sch-value">{{question.exercise}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Exercise Duration</td>
+                        <td class="sch-value">{{question.exercise_duration}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Water Glasses</td>
+                        <td class="sch-value">{{question.water_glasses}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Weight Gain</td>
+                        <td class="sch-value">{{question.weight_gain}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">Current Weight</td>
+                        <td class="sch-value">{{question.current_weight}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">DF</td>
+                        <td class="sch-value">{{question.df}}</td>
+                    </tr>
+                    <tr>
+                        <td class="sch-attribute">DF Quality</td>
+                        <td class="sch-value">{{question.df_quality}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
     {% endfor %}
-        </ul>
     {% else %}
         <p>No polls are available.</p>
     {% endif %}

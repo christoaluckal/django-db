@@ -11,7 +11,7 @@ def index(request):
     return HttpResponse(template)
 
 def showall(request):
-    schedule_list = Schedule.objects.all().order_by('-date')
+    schedule_list = Schedule.objects.all()
     template = loader.get_template('schedule/show.html')
     context = {
         'schedule_list':schedule_list,

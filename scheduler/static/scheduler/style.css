@@ -1,0 +1,8 @@
+.choice-container {
+    border: 1px solid black;
+    text-align: center;
+}
+.display-list-box{
+    display: inline-block;
+    margin: 0 1%;
+}
